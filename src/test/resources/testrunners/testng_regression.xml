@@ -3,13 +3,25 @@
 
 <suite name="Open App Test Regression Suite" thread-count="3" parallel="tests" verbose="3" >
 
+
+	<listeners>
+		<listener
+			class-name="com.qa.opencart.listeners.ExtentReportListener" />
+			
+			<listener class-name="com.qa.opencart.listeners.AnnotationTransformer" />
+			
+				</listeners>
+				
+				
  <test name="Login Page Test">  
+	 <parameter name="browser" value="chrome"/>
       <classes>
       <class name="com.qa.opencart.tests.LoginPageTest"/>
       </classes>
   </test>  
-
-  <test name="Product Result Page Test">
+  
+<!--  <test name="Product Result Page Test">
+	  <parameter name="browser" value="firefox"/>
       <classes>
          <class name="com.qa.opencart.tests.ProductResultsPageTest"/>
       </classes>
@@ -17,12 +29,10 @@
   </test> 
   
    <test name="Account Page Test">
+	   <parameter name="browser" value="edge"/>
       <classes>
           <class name="com.qa.opencart.tests.AccountPageTests"/>
       </classes>
-  </test> 
-
-
-
+  </test> -->
 
 </suite>

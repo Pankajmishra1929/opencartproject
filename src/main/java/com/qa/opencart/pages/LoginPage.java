@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.qa.opencart.utills.ElementUtil;
 
+import io.qameta.allure.Step;
 import open.qa.constants.AppConstants;
 
 public class LoginPage {
@@ -15,7 +16,7 @@ public class LoginPage {
 	private By userName= By.id("input-email");
 	private By password= By.id("input-password");
 	private By loginBtn= By.xpath("//input[@value='Login']");
-	private By forgotPwdLink= By.linkText("Forgotten Password");
+	private By forgotPwdLink= By.linkText("Forgotten Password11");
 	private By logo= By.cssSelector("img[title='naveenopencart']");
 	
 	// page constructor...
@@ -25,7 +26,7 @@ public class LoginPage {
 	}
 	
 	//page actions/methods:
-	
+	@Step("getting login page title")
 	public String getLoginPageTitle() {
 		String title=eUtil.waitForTitle(AppConstants.LOGIN_PAGE_TITLE, AppConstants.SHORT_DEFAULT_WAIT);
 		//String title= driver.getTitle();
@@ -33,25 +34,29 @@ public class LoginPage {
 		return title;
 	}
 	
-	
+	@Step("getting login page url..")
 	public String getLoginPageUrl() {
 		String url= eUtil.waitForURLContains(AppConstants.LOGIN_PAGE_URLFRACTION, AppConstants.SHORT_DEFAULT_WAIT);
 		System.out.println("page url" + url);
 		return url;
 	}
 	
+	@Step("checking forgot pwd link")
 	public boolean isForgotPwdLinkExist() {
 		return eUtil.waitForVisibilityOfElement(forgotPwdLink, AppConstants.SHORT_DEFAULT_WAIT).isDisplayed();
 		//return driver.findElement(forgotPwdLink).isDisplayed();
 	}
 	
+	
+	@Step("checking logo exit or not")
 	public boolean isLogoExist() {
 		return eUtil.waitForVisibilityOfElement(logo, AppConstants.SHORT_DEFAULT_WAIT).isDisplayed();
 		//return driver.findElement(logo).isDisplayed();
 	}
 	
+	@Step("User name is: {0} and Password {1}")
 	public AccountsPage doLogin(String username, String pwd) {
-		eUtil.waitForVisibilityOfElement(userName, AppConstants.MEDIUM_DEFAULT_WAIT).sendKeys(username);;
+		eUtil.waitForVisibilityOfElement(userName, AppConstants.LONG_DEFAULT_WAIT).sendKeys(username);;
 		eUtil.doSendKeys(password, pwd);
 		eUtil.doClick(loginBtn);
 		
