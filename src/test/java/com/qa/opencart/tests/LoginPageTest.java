@@ -1,7 +1,4 @@
 package com.qa.opencart.tests;
-
-
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
