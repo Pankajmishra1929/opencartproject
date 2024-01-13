@@ -26,7 +26,6 @@ public class BaseTest {
 	protected SoftAssert softAssert;
 	
 	@Parameters({"browser"})
-	
 	@BeforeTest
 	public void setup(String browserName) {
 		df = new DriverFactory();

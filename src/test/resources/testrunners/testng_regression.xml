@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Open App Test Regression Suite" thread-count="3" parallel="tests" verbose="3" >
+<suite name="Open App Test Regression Suite" thread-count="4" parallel="tests" verbose="3" >
 
 
 	<listeners>
@@ -20,7 +20,7 @@
       </classes>
   </test>  
   
-<!--  <test name="Product Result Page Test">
+ <test name="Product Result Page Test">
 	  <parameter name="browser" value="firefox"/>
       <classes>
          <class name="com.qa.opencart.tests.ProductResultsPageTest"/>
@@ -33,6 +33,6 @@
       <classes>
           <class name="com.qa.opencart.tests.AccountPageTests"/>
       </classes>
-  </test> -->
+  </test>
 
 </suite>

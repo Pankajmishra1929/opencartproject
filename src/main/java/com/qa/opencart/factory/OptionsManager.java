@@ -21,13 +21,27 @@ public class OptionsManager {
 		co = new ChromeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim())) co.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim())) co.addArguments("--incognito");
+		
+//		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			co.setCapability("browserName", "chrome");
+//			//co.setCapability("enableVNC", true);
+//		}
+		
 		return co;
+		
+		
 	}
 	
 	public FirefoxOptions getFirefoxOptions() {
 		fo = new FirefoxOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim())) fo.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim())) fo.addArguments("--incognito");
+		
+//		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			co.setCapability("browserName", "firefox");
+//			//co.setCapability("enableVNC", true);
+//		}
+		
 		return fo;
 	}
 	
@@ -35,6 +49,13 @@ public class OptionsManager {
 		eo = new EdgeOptions();
 		if(Boolean.parseBoolean(prop.getProperty("headless").trim())) eo.addArguments("--headless");
 		if(Boolean.parseBoolean(prop.getProperty("incognito").trim())) eo.addArguments("--inPrivate");
+//		
+//		if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+//			co.setCapability("browserName", "edge");
+//			//co.setCapability("enableVNC", true);
+//		}
+		
+		
 		return eo;
 	}
 }
